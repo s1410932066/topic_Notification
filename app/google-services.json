@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "560950895834",
+    "project_id": "mqtt-2ab08",
+    "storage_bucket": "mqtt-2ab08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560950895834:android:f02b1e4a72011e7c4d31e3",
+        "android_client_info": {
+          "package_name": "com.example.notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560950895834-g3e55sh41fbkdp315bq4p2p5bdtr6llf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2WhSTiZpPXhbq04NEycdjYXT1LBQ_Bno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560950895834-g3e55sh41fbkdp315bq4p2p5bdtr6llf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
