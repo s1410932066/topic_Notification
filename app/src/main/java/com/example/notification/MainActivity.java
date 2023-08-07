@@ -46,14 +46,20 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
         button = findViewById(R.id.button);
-        Intent intent = new Intent(MainActivity.this, MqttService.class);
-        startForegroundService(intent);
+//        Intent intent = new Intent(MainActivity.this, MqttService.class);
+//        startService(intent);
 
+        // 初始化 Firebase
+        FirebaseApp.initializeApp(this);
+        // 訂閱主題（可選，根據您的需求來訂閱主題）
+//        FirebaseMessaging.getInstance().subscribeToTopic("/test");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 createNotificationChannel();
                 showNotification();
+//                Intent serviceIntent = new Intent(MainActivity.this, MqttService.class);
+//                stopService(serviceIntent);
             }
         });
     }
