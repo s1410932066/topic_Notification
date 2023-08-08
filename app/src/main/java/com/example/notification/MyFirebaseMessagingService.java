@@ -2,6 +2,8 @@ package com.example.notification;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.util.Log;
@@ -29,24 +31,20 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (message.getNotification() != null) {
             String messageTitle = message.getNotification().getTitle();
             String messageBody = message.getNotification().getBody();
-            String messageIcon = message.getNotification().getIcon();
-            showNotification(messageTitle, messageBody, messageIcon);
+//            String messageIcon = message.getNotification().getIcon();
+            showNotification(messageTitle, messageBody);
         }
     }
 
-    @Override
-    public void onSendError(@NonNull String msgId, @NonNull Exception exception) {
-        super.onSendError(msgId, exception);
 
-    }
-
-    private void showNotification(String messageTitle, String messageBody, String messageIcon) {
+    private void showNotification(String messageTitle, String messageBody) {
         long currentTimeMillis = System.currentTimeMillis();
         int notificationId = (int) currentTimeMillis;
+
         // 創建通知
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-                .setSmallIcon(R.drawable.test)
-//                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.monitor))
+                .setSmallIcon(R.drawable.icon)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.removebg_preview))
                 .setContentTitle(messageTitle)
                 .setContentText(messageBody)
                 .setAutoCancel(true)
@@ -65,6 +63,4 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         notificationManager.notify(notificationId, notificationBuilder.build());
 
     }
-
-
 }
